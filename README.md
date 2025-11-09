@@ -1,22 +1,43 @@
 # 🧠 AIFileManager.API
 
-## 🤝 Integration Guide (Frontend + Backend)
+## 🤝 Integration Guide (Backend + Frontend)
 
 This guide explains how to connect **Sofia’s .NET 8 Web API** backend (`AIFileManager.API`) with your **React frontend** using **Docker**.  
-Both services will run locally in containers and communicate through a shared Docker network.
+Both services run locally in containers and communicate through a shared Docker network.
 
 ---
 
-## ⚙️ Overview
+## 📂 Folder Structure (Confirmed)
 
-**Architecture**
+```
+AIFileManagerRepo/
+└── AIFileManager.API/
+    ├── AIFileManager.API/              ← Source code and .csproj
+    │   ├── AIFileManager.API.csproj
+    │   ├── Controllers/
+    │   ├── Services/
+    │   └── Program.cs
+    │
+    ├── AIFileManager.API.sln           ← Solution file
+    └── Dockerfile                      ← Dockerfile in this folder
+```
+
+✅ This structure ensures the Dockerfile can correctly find and build the project.
+
+---
+
+## ⚙️ Architecture Overview
+
+```
 [ React Frontend ] ---> [ .NET 8 Web API ] ---> [ Python AI Service (optional) ]
-(Port 5173) (Port 5000) (Port 8000)
+      (Port 5173)             (Port 5000)               (Port 8000)
+```
+
 ---
 
 ## 🧩 Prerequisites
 
-Both systems (backend and frontend) must have:
+Both backend and frontend require:
 
 - 🐳 [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - 🧱 Docker Compose v2+
@@ -25,108 +46,92 @@ Both systems (backend and frontend) must have:
 
 ---
 
-## 📁 Folder Setup
-project-root/
-├── backend/ ← Sofia’s .NET API (AIFileManager.API)
-│ ├── Dockerfile
-│ ├── appsettings.json
-│ ├── AIFileManager.API.csproj
-│ ├── Controllers/
-│ └── ...
-│
-└── frontend/ ← Your React project
-├── Dockerfile
-├── package.json
-└── ...
+## 🐳 1️⃣ Create a Shared Docker Network
 
-> 💡 Make sure both folders are inside the same parent directory so Docker Compose can connect them.
+Run this once to allow containers to communicate:
+
+```bash
+docker network create aifilemanager_net
+```
 
 ---
 
-Summary of Docker Commands:
-# Create shared network
-docker network create aifilemanager_net
+## 🧠 2️⃣ Build and Run Sofia’s Backend (.NET 8 API)
 
-# Backend build + run
-cd backend
-docker build -t aifilemanager-backend .
-docker run -d --name aifilemanager-api --network aifilemanager_net -p 5000:5000 aifilemanager-backend
+Go to the backend folder (where the Dockerfile is):
 
-# Frontend build + run
-cd ../frontend
-docker build -t aifilemanager-frontend .
-docker run -d --name aifilemanager-ui --network aifilemanager_net -p 5173:5173 aifilemanager-frontend
+```bash
+cd C:\Users\User\source\repos\AIFileManagerRepo\AIFileManager.API
+```
 
-# OR: Run both via Compose
-cd ..
-docker compose up --build
+Then run the following commands:
 
-
-## 🧱 Docker Commands (Full Setup)
-
-Below are **all commands** you need from start to finish.  
-Run them **in order** from your project root or as specified.
-
----
-
-### 🐳 1️⃣ Create a Shared Docker Network
-Run this once to allow backend and frontend containers to talk:
-
-docker network create aifilemanager_net
-
-🧠 2️⃣ Build and Run Sofia’s Backend (.NET 8 API)
-
-Go to the backend folder (where your Dockerfile is):
-
-cd backend
-
+```bash
+# Build the backend image
 docker build -t aifilemanager-backend .
 
+# Run the backend container
 docker run -d --name aifilemanager-api --network aifilemanager_net -p 5000:5000 aifilemanager-backend
+```
 
+Check if it’s running:
+```bash
 docker ps
+```
 
-🖥️ 3️⃣ Configure the Frontend
+✅ Once it starts, your API should be available at:
+- Local: [http://localhost:5000](http://localhost:5000)
+- Inside Docker network: `http://aifilemanager-api:5000`
 
-In your React project, create or edit your .env file:
+---
 
+## 🖥️ 3️⃣ Configure the Frontend
+
+In your **React project**, edit or create your `.env` file:
+
+```env
 VITE_API_BASE_URL=http://aifilemanager-api:5000
+```
 
-If you’re running the React app locally (without Docker), instead use:
+If running React **locally** (not in Docker):
+```env
 VITE_API_BASE_URL=http://localhost:5000
+```
 
-Your frontend should use this variable, e.g.:
-
+Use the variable in your API calls:
+```typescript
 const API_URL = import.meta.env.VITE_API_BASE_URL;
 const response = await fetch(`${API_URL}/api/files`);
+```
 
+---
 
-4️⃣ Build and Run the React Frontend in Docker
+## 🧩 4️⃣ Build and Run the React Frontend in Docker
 
 Go to the frontend folder:
-
+```bash
 cd ../frontend
+```
 
+Build and run the frontend container:
 
-Build the frontend image:
-
+```bash
 docker build -t aifilemanager-frontend .
-
-
-Run the frontend container:
-
 docker run -d --name aifilemanager-ui --network aifilemanager_net -p 5173:5173 aifilemanager-frontend
+```
 
+✅ The React app will be available at:  
+👉 [http://localhost:5173](http://localhost:5173)
 
-✅ The app will now be available at:
-👉 http://localhost:5173
+It will automatically connect to the backend via the shared network.
 
-It will automatically connect to the backend via the shared Docker network.
+---
 
-🐋 5️⃣ (Optional) Run Both via Docker Compose
+## 🐋 5️⃣ Run Both via Docker Compose (Optional)
 
-If you want to launch everything with a single command, create a docker-compose.yml in your root folder:
+If you want a one-command setup, create a `docker-compose.yml` in your root folder:
 
+```yaml
 version: '3.9'
 
 services:
@@ -153,19 +158,75 @@ services:
 networks:
   aifilemanager_net:
     external: true
+```
 
-
-Then simply run:
-
+Then run:
+```bash
 docker compose up --build
+```
 
-✅ This automatically builds both images and starts both containers connected to the same network.
+✅ This builds and runs both backend and frontend automatically.
 
-🔍 Testing Connection
+---
 
-Open http://localhost:5173
+## 🧪 Testing Connection
 
-The frontend should call the backend at http://backend:5000 (inside Docker).
+1. Open [http://localhost:5173](http://localhost:5173)  
+2. The frontend should call `http://backend:5000` inside Docker.  
+3. If your drive list or test data loads — ✅ everything is working!
 
-If you see your drive list or test data → ✅ Everything works!
+---
 
+## 🧱 Full Command Summary
+
+```bash
+# Create shared network
+docker network create aifilemanager_net
+
+# Build and run backend
+cd backend
+docker build -t aifilemanager-backend .
+docker run -d --name aifilemanager-api --network aifilemanager_net -p 5000:5000 aifilemanager-backend
+
+# Build and run frontend
+cd ../frontend
+docker build -t aifilemanager-frontend .
+docker run -d --name aifilemanager-ui --network aifilemanager_net -p 5173:5173 aifilemanager-frontend
+
+# OR (easier) run both together
+cd ..
+docker compose up --build
+```
+
+---
+
+## 🧰 Troubleshooting
+
+| Issue | Cause | Fix |
+|-------|--------|-----|
+| 🚫 `localhost refused to connect` | API not listening on 0.0.0.0 | Add `builder.WebHost.UseUrls("http://0.0.0.0:5000");` in `Program.cs` |
+| 🚫 Network not found | You forgot to create it | `docker network create aifilemanager_net` |
+| 🚫 Port in use | Another process is using 5000 or 5173 | Change mapping, e.g. `-p 5001:5000` |
+| 🚫 `Project file does not exist` | Wrong folder or case mismatch | Ensure folder names match exactly (`AIFileManager.API`) |
+| 🚫 No response | App crashed | Check logs with `docker logs aifilemanager-api` |
+
+---
+
+## ✅ Final Notes
+
+- Backend API (outside Docker): `http://localhost:5000`  
+- Backend API (inside Docker): `http://aifilemanager-api:5000`  
+- Frontend (React): `http://localhost:5173`  
+- API Swagger UI: [http://localhost:5000/swagger](http://localhost:5000/swagger)
+
+---
+
+💡 **Tip:**  
+When cloning, place this repo inside your `backend/` folder so it looks like:
+```
+project-root/
+├── backend/
+│   └── AIFileManager.API/
+└── frontend/
+```
+Then all Docker commands will work exactly as written above.
