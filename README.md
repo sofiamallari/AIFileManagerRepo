@@ -145,7 +145,7 @@ Once the container is running, open:
 Then try this:
 
 ```
-GET /api/Storage/getFileList?path=/app/files
+/app/files
 ```
 
 ✅ It will show the list of files from the folder you mounted (e.g., your Downloads or Documents).
