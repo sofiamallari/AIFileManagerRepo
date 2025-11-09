@@ -1,54 +1,62 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\services\\filestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\services\\filestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\aifilemanager.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\aifilemanager.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\aifilemanager.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\controllers\\analysiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\controllers\\analysiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\controllers\\storagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\services\\filestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\services\\filestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\controllers\\storagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\controllers\\storagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\services\\aiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\services\\aiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\interfaces\\iaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\interfaces\\iaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\interfaces\\ifilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\interfaces\\ifilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\interfaces\\ifilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\dto\\aianalysisresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\dto\\aianalysisresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\dto\\fileinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\dto\\fileinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\dto\\fileinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\dto\\folderinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\dto\\folderinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\dto\\driveinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\dto\\driveinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\dto\\driveinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanager.api\\aifilemanager.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\dto\\aianalysisresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\dto\\aianalysisresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\interfaces\\iaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\interfaces\\iaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\controllers\\analysiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\controllers\\analysiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\services\\aiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\services\\aiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|c:\\users\\user\\source\\repos\\aifilemanagerrepo\\aifilemanager.api\\aifilemanager.api\\dto\\folderinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9911B59D-C3E7-42BA-B73C-583B9875C61E}|AIFIleManager.API\\AIFIleManager.API.csproj|solutionrelative:aifilemanager.api\\dto\\folderinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,11 +71,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AIFIleManager.API",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\AIFIleManager.API.csproj",
-              "RelativeDocumentMoniker": "AIFIleManager.API\\AIFIleManager.API.csproj",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\AIFIleManager.API.csproj",
-              "RelativeToolTip": "AIFIleManager.API\\AIFIleManager.API.csproj",
+              "Title": "ReadMe.txt",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\ReadMe.txt",
+              "RelativeDocumentMoniker": "AIFIleManager.API\\ReadMe.txt",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\ReadMe.txt",
+              "RelativeToolTip": "AIFIleManager.API\\ReadMe.txt",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAEEAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-11-09T17:12:33.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AIFIleManager.API.csproj",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\AIFileManager.API.csproj",
+              "RelativeDocumentMoniker": "AIFIleManager.API\\AIFileManager.API.csproj",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\AIFileManager.API.csproj",
+              "RelativeToolTip": "AIFIleManager.API\\AIFileManager.API.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-11-09T13:37:38.684Z",
@@ -75,102 +96,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\docker-compose.yml",
+              "RelativeDocumentMoniker": "AIFIleManager.API\\docker-compose.yml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\docker-compose.yml",
+              "RelativeToolTip": "AIFIleManager.API\\docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-11-09T17:16:46.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "FileStorageService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Services\\FileStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Services\\FileStorageService.cs",
               "RelativeDocumentMoniker": "AIFIleManager.API\\Services\\FileStorageService.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Services\\FileStorageService.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Services\\FileStorageService.cs",
               "RelativeToolTip": "AIFIleManager.API\\Services\\FileStorageService.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAswIoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAYwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T13:39:38.705Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AnalysisController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Controllers\\AnalysisController.cs",
-              "RelativeDocumentMoniker": "AIFIleManager.API\\Controllers\\AnalysisController.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Controllers\\AnalysisController.cs",
-              "RelativeToolTip": "AIFIleManager.API\\Controllers\\AnalysisController.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAuwB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T13:38:08.787Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StorageController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Controllers\\StorageController.cs",
-              "RelativeDocumentMoniker": "AIFIleManager.API\\Controllers\\StorageController.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Controllers\\StorageController.cs",
-              "RelativeToolTip": "AIFIleManager.API\\Controllers\\StorageController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T13:38:00.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AIService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Services\\AIService.cs",
-              "RelativeDocumentMoniker": "AIFIleManager.API\\Services\\AIService.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Services\\AIService.cs",
-              "RelativeToolTip": "AIFIleManager.API\\Services\\AIService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T13:39:46.618Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "IAIService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Interfaces\\IAIService.cs",
-              "RelativeDocumentMoniker": "AIFIleManager.API\\Interfaces\\IAIService.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Interfaces\\IAIService.cs",
-              "RelativeToolTip": "AIFIleManager.API\\Interfaces\\IAIService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T13:40:21.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "IFileStorageService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Interfaces\\IFileStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Interfaces\\IFileStorageService.cs",
               "RelativeDocumentMoniker": "AIFIleManager.API\\Interfaces\\IFileStorageService.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Interfaces\\IFileStorageService.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Interfaces\\IFileStorageService.cs",
               "RelativeToolTip": "AIFIleManager.API\\Interfaces\\IFileStorageService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T13:40:12.688Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AIAnalysisResultDto.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\DTO\\AIAnalysisResultDto.cs",
-              "RelativeDocumentMoniker": "AIFIleManager.API\\DTO\\AIAnalysisResultDto.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\DTO\\AIAnalysisResultDto.cs",
-              "RelativeToolTip": "AIFIleManager.API\\DTO\\AIAnalysisResultDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "StorageController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Controllers\\StorageController.cs",
+              "RelativeDocumentMoniker": "AIFIleManager.API\\Controllers\\StorageController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Controllers\\StorageController.cs",
+              "RelativeToolTip": "AIFIleManager.API\\Controllers\\StorageController.cs",
+              "ViewState": "AgIAANgAAAAAAAAAAAD4v6YAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T13:39:07.468Z",
+              "WhenOpened": "2025-11-09T13:38:00.605Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Program.cs",
+              "RelativeDocumentMoniker": "AIFIleManager.API\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Program.cs",
+              "RelativeToolTip": "AIFIleManager.API\\Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:40:25.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "FileInfoDto.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\DTO\\FileInfoDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\DTO\\FileInfoDto.cs",
               "RelativeDocumentMoniker": "AIFIleManager.API\\DTO\\FileInfoDto.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\DTO\\FileInfoDto.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\DTO\\FileInfoDto.cs",
               "RelativeToolTip": "AIFIleManager.API\\DTO\\FileInfoDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -179,24 +174,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FolderInfoDto.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\DTO\\FolderInfoDto.cs",
-              "RelativeDocumentMoniker": "AIFIleManager.API\\DTO\\FolderInfoDto.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\DTO\\FolderInfoDto.cs",
-              "RelativeToolTip": "AIFIleManager.API\\DTO\\FolderInfoDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T13:38:52.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "DriveInfoDto.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\DTO\\DriveInfoDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\DTO\\DriveInfoDto.cs",
               "RelativeDocumentMoniker": "AIFIleManager.API\\DTO\\DriveInfoDto.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\DTO\\DriveInfoDto.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\DTO\\DriveInfoDto.cs",
               "RelativeToolTip": "AIFIleManager.API\\DTO\\DriveInfoDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -205,15 +187,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Program.cs",
-              "RelativeDocumentMoniker": "AIFIleManager.API\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\Program.cs",
-              "RelativeToolTip": "AIFIleManager.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "AIAnalysisResultDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\DTO\\AIAnalysisResultDto.cs",
+              "RelativeDocumentMoniker": "AIFIleManager.API\\DTO\\AIAnalysisResultDto.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\DTO\\AIAnalysisResultDto.cs",
+              "RelativeToolTip": "AIFIleManager.API\\DTO\\AIAnalysisResultDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T13:40:25.74Z",
+              "WhenOpened": "2025-11-09T13:39:07.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IAIService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Interfaces\\IAIService.cs",
+              "RelativeDocumentMoniker": "AIFIleManager.API\\Interfaces\\IAIService.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Interfaces\\IAIService.cs",
+              "RelativeToolTip": "AIFIleManager.API\\Interfaces\\IAIService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:40:21.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AnalysisController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Controllers\\AnalysisController.cs",
+              "RelativeDocumentMoniker": "AIFIleManager.API\\Controllers\\AnalysisController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Controllers\\AnalysisController.cs",
+              "RelativeToolTip": "AIFIleManager.API\\Controllers\\AnalysisController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAuwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:38:08.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AIService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Services\\AIService.cs",
+              "RelativeDocumentMoniker": "AIFIleManager.API\\Services\\AIService.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\Services\\AIService.cs",
+              "RelativeToolTip": "AIFIleManager.API\\Services\\AIService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:39:46.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FolderInfoDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\DTO\\FolderInfoDto.cs",
+              "RelativeDocumentMoniker": "AIFIleManager.API\\DTO\\FolderInfoDto.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\DTO\\FolderInfoDto.cs",
+              "RelativeToolTip": "AIFIleManager.API\\DTO\\FolderInfoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:38:52.91Z",
               "EditorCaption": ""
             }
           ]

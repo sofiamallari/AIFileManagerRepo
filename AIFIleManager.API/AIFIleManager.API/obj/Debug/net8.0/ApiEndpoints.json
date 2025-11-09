@@ -59,6 +59,11 @@
         "Name": "path",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "permanent",
+        "Type": "System.Boolean",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -74,6 +79,11 @@
       {
         "Name": "path",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "permanent",
+        "Type": "System.Boolean",
         "IsRequired": false
       }
     ],
@@ -91,6 +101,27 @@
   },
   {
     "ContainingType": "AIFileManager.Controllers.StorageController",
+    "Method": "GetFileList",
+    "RelativePath": "api/Storage/getFileList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "path",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "deepScan",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AIFileManager.Controllers.StorageController",
     "Method": "GetFileMetadata",
     "RelativePath": "api/Storage/getFileMetadata",
     "HttpMethod": "GET",
@@ -100,6 +131,11 @@
       {
         "Name": "path",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "deepScan",
+        "Type": "System.Boolean",
         "IsRequired": false
       }
     ],
@@ -116,6 +152,11 @@
       {
         "Name": "path",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "deepScan",
+        "Type": "System.Boolean",
         "IsRequired": false
       }
     ],

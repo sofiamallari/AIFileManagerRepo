@@ -1039,11 +1039,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFileManager.API\\AIFIleManager.API.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\AIFIleManager.API.csproj",
       "projectName": "AIFIleManager.API",
-      "projectPath": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFileManager.API\\AIFIleManager.API.csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\AIFIleManager.API.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFileManager.API\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

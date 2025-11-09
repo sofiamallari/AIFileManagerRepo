@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\AIFIleManager.API.csproj": {}
+    "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\AIFileManager.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\AIFIleManager.API.csproj": {
+    "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\AIFileManager.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\AIFIleManager.API.csproj",
-        "projectName": "AIFIleManager.API",
-        "projectPath": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\AIFIleManager.API.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\AIFileManager.API.csproj",
+        "projectName": "AIFileManager.API",
+        "projectPath": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\AIFileManager.API.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\AIFIleManager.API\\AIFIleManager.API\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\AIFileManagerRepo\\AIFIleManager.API\\AIFIleManager.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

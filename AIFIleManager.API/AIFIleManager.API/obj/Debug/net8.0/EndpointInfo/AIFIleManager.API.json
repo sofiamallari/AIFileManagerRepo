@@ -122,6 +122,35 @@
         }
       }
     },
+    "/api/Storage/getFileList": {
+      "get": {
+        "tags": [
+          "Storage"
+        ],
+        "parameters": [
+          {
+            "name": "path",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "deepScan",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Storage/getFolderList": {
       "get": {
         "tags": [
@@ -133,6 +162,14 @@
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "deepScan",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
             }
           }
         ],
@@ -155,6 +192,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "deepScan",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
           }
         ],
         "responses": {
@@ -176,6 +221,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "permanent",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
           }
         ],
         "responses": {
@@ -196,6 +249,14 @@
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "permanent",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
             }
           }
         ],

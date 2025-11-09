@@ -1,0 +1,103 @@
+############################
+# .NET / ASP.NET Core
+############################
+bin/
+obj/
+out/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.userprefs
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.dbmdl
+*.bak
+*.log
+*.ldf
+*.ndf
+*.psess
+*.vsp
+*.vspx
+*.vspscc
+.vs/
+launchSettings.json
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Visual Studio Code workspace settings
+.vscode/
+
+############################
+# Python (AI microservice)
+############################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+.env
+venv/
+.env/
+.envrc
+*.pyproj
+*.ipynb_checkpoints
+__pycache__/
+.pytest_cache/
+logs/
+*.sqlite3
+
+############################
+# Node / ReactJS (if UI in repo)
+############################
+node_modules/
+build/
+dist/
+.cache/
+*.log
+.env.local
+.env.development.local
+.env.production.local
+
+############################
+# OS / IDE files
+############################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+############################
+# Other temporary / config files
+############################
+*.tmp
+*.swp
+*.bak
+*.orig
+*.old
+*.zip
+*.tar.gz
+*.7z
+
+# User-specific secrets (you may add AI tokens here)
+secrets.json
+appsettings.Development.json
+appsettings.Local.json
+
+# Logs / cache
+*.log
+logs/
+cache/
+temp/
