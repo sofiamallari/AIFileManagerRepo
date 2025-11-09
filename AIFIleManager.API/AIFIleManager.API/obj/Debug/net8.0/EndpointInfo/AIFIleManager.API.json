@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.4",
   "info": {
-    "title": "AIFIleManager.API",
+    "title": "AIFileManager.API",
     "version": "1.0"
   },
   "paths": {

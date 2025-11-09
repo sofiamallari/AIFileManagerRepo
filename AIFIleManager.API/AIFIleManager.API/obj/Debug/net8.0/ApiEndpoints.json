@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "files",
-        "Type": "System.Collections.Generic.List\u00601[[AIFileManager.DTO.FileInfoDto, AIFIleManager.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[AIFileManager.DTO.FileInfoDto, AIFileManager.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
@@ -25,7 +25,7 @@
     "Parameters": [
       {
         "Name": "folders",
-        "Type": "System.Collections.Generic.List\u00601[[AIFileManager.DTO.FolderInfoDto, AIFIleManager.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[AIFileManager.DTO.FolderInfoDto, AIFileManager.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],

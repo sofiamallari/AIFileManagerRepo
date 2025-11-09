@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AIFileManager.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0eebd72cc64e1c11c454a28864a1d925fd1b71a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6f09a8de40479bb95a2efae8215d921cbc11716")]
 [assembly: System.Reflection.AssemblyProductAttribute("AIFileManager.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AIFileManager.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

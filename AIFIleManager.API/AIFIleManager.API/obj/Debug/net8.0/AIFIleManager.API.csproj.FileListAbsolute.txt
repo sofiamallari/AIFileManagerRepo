@@ -93,9 +93,9 @@ C:\Users\User\source\repos\AIFileManagerRepo\AIFIleManager.API\AIFIleManager.API
 C:\Users\User\source\repos\AIFileManagerRepo\AIFIleManager.API\AIFIleManager.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\User\source\repos\AIFileManagerRepo\AIFIleManager.API\AIFIleManager.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\User\source\repos\AIFileManagerRepo\AIFIleManager.API\AIFIleManager.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\User\source\repos\AIFileManagerRepo\AIFIleManager.API\AIFIleManager.API\obj\Debug\net8.0\AIFIleMa.65E1FFB7.Up2Date
 C:\Users\User\source\repos\AIFileManagerRepo\AIFIleManager.API\AIFIleManager.API\obj\Debug\net8.0\AIFIleManager.API.dll
 C:\Users\User\source\repos\AIFileManagerRepo\AIFIleManager.API\AIFIleManager.API\obj\Debug\net8.0\refint\AIFIleManager.API.dll
 C:\Users\User\source\repos\AIFileManagerRepo\AIFIleManager.API\AIFIleManager.API\obj\Debug\net8.0\AIFIleManager.API.pdb
 C:\Users\User\source\repos\AIFileManagerRepo\AIFIleManager.API\AIFIleManager.API\obj\Debug\net8.0\AIFIleManager.API.genruntimeconfig.cache
 C:\Users\User\source\repos\AIFileManagerRepo\AIFIleManager.API\AIFIleManager.API\obj\Debug\net8.0\ref\AIFIleManager.API.dll
+C:\Users\User\source\repos\AIFileManagerRepo\AIFIleManager.API\AIFIleManager.API\obj\Debug\net8.0\AIFileMa.DEDC5A58.Up2Date
