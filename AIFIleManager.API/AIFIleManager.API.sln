@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIFIleManager.API", "AIFIleManager.API\AIFIleManager.API.csproj", "{9911B59D-C3E7-42BA-B73C-583B9875C61E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9911B59D-C3E7-42BA-B73C-583B9875C61E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9911B59D-C3E7-42BA-B73C-583B9875C61E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9911B59D-C3E7-42BA-B73C-583B9875C61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9911B59D-C3E7-42BA-B73C-583B9875C61E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4792CB8-9EDF-4E70-AC24-FF98D29A7F4E}
+	EndGlobalSection
+EndGlobal
