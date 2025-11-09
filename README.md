@@ -1,232 +1,185 @@
-# 🧠 AIFileManager.API
+# AIFileManager API
 
-## 🤝 Integration Guide (Backend + Frontend)
-
-This guide explains how to connect **Sofia’s .NET 8 Web API** backend (`AIFileManager.API`) with your **React frontend** using **Docker**.  
-Both services run locally in containers and communicate through a shared Docker network.
+A .NET 8 Web API that allows users to explore, manage, and analyze their local files directly from Docker or a standard host environment. The project supports directory scanning, file operations (move, delete, metadata retrieval), and optional AI-powered file analysis modules.
 
 ---
 
-## 📂 Folder Structure (Confirmed)
+## ⚙️ Requirements
 
-```
-AIFileManagerRepo/
-└── AIFileManager.API/
-    ├── AIFileManager.API/              ← Source code and .csproj
-    │   ├── AIFileManager.API.csproj
-    │   ├── Controllers/
-    │   ├── Services/
-    │   └── Program.cs
-    │
-    ├── AIFileManager.API.sln           ← Solution file
-    └── Dockerfile                      ← Dockerfile in this folder
-```
-
-✅ This structure ensures the Dockerfile can correctly find and build the project.
+* **.NET 8 SDK**
+* **Docker Desktop** (Windows / Linux / macOS)
+* **Git** (optional)
 
 ---
 
-## ⚙️ Architecture Overview
+## 🚀 How to Build and Run
 
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/<your-username>/AIFileManagerRepo.git
+cd AIFileManagerRepo
 ```
-[ React Frontend ] ---> [ .NET 8 Web API ] ---> [ Python AI Service (optional) ]
-      (Port 5173)             (Port 5000)               (Port 8000)
+
+### 2️⃣ Build the Docker Image
+
+```bash
+docker build -t aifilemanager-backend .
+```
+
+### 3️⃣ Run the Container
+
+```bash
+docker run -d --name aifilemanager-api -p 5000:5000 aifilemanager-backend
+```
+
+### 4️⃣ Open Swagger
+
+👉 [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html)
+
+You can now test all available endpoints.
+
+---
+
+## 🧩 Docker Compose (Optional)
+
+To run multiple services (e.g., backend + frontend):
+
+```bash
+docker compose up --build -d
+```
+
+To stop everything:
+
+```bash
+docker compose down
 ```
 
 ---
 
-## 🧩 Prerequisites
+## 🧱 API Overview
 
-Both backend and frontend require:
-
-- 🐳 [Docker Desktop](https://www.docker.com/products/docker-desktop)
-- 🧱 Docker Compose v2+
-- 💻 Node.js 18+ (only required if running React locally)
-- 🔧 .NET 8 SDK (only required for local API debugging)
+| Endpoint                                  | Description                       |
+| ----------------------------------------- | --------------------------------- |
+| `/api/Storage/getDrive`                   | Lists available drives            |
+| `/api/Storage/getFolderList?path=/path`   | Lists folders inside a directory  |
+| `/api/Storage/getFileList?path=/path`     | Lists files in a folder           |
+| `/api/Storage/getFileMetadata?path=/path` | Shows metadata and partial hashes |
+| `/api/Storage/deleteFile?path=/path`      | Deletes or recycles a file        |
+| `/api/Storage/deleteFolder?path=/path`    | Deletes or recycles a folder      |
 
 ---
 
-## 🐳 1️⃣ Create a Shared Docker Network
+## ⚡ Quick Start — “Easy Use” Commands
 
-Run this once to allow containers to communicate:
+This section is for anyone who just wants to **run the API and check files** in a specific local folder quickly using Docker.
+
+### 🧱 1️⃣ Create the Docker Network (Only Once)
 
 ```bash
 docker network create aifilemanager_net
 ```
 
----
+If it already exists, Docker will show:
 
-## 🧠 2️⃣ Build and Run Sofia’s Backend (.NET 8 API)
-
-Go to the backend folder (where the Dockerfile is):
-
-```bash
-cd C:\Users\User\source\repos\AIFileManagerRepo\AIFileManager.API
+```
+Error response from daemon: network with name aifilemanager_net already exists
 ```
 
-Then run the following commands:
+✅ That’s fine — skip to the next step.
+
+---
+
+### 🏗️ 2️⃣ Build the Project
+
+From your backend folder (where the `Dockerfile` and `.sln` are located):
 
 ```bash
-# Build the backend image
 docker build -t aifilemanager-backend .
-
-# Run the backend container
-docker run -d --name aifilemanager-api --network aifilemanager_net -p 5000:5000 aifilemanager-backend
 ```
 
-Check if it’s running:
-```bash
-docker ps
-```
-
-✅ Once it starts, your API should be available at:
-- Local: [http://localhost:5000](http://localhost:5000)
-- Inside Docker network: `http://aifilemanager-api:5000`
+This creates a Docker image of your **AIFileManager API**.
 
 ---
 
-## 🖥️ 3️⃣ Configure the Frontend
+### 💾 3️⃣ Run the API and Mount Any Folder You Want to Check
 
-In your **React project**, edit or create your `.env` file:
+When you run the container, you can mount **any folder on your host** (e.g., `Downloads`, `Documents`, or a custom project folder).
 
-```env
-VITE_API_BASE_URL=http://aifilemanager-api:5000
-```
-
-If running React **locally** (not in Docker):
-```env
-VITE_API_BASE_URL=http://localhost:5000
-```
-
-Use the variable in your API calls:
-```typescript
-const API_URL = import.meta.env.VITE_API_BASE_URL;
-const response = await fetch(`${API_URL}/api/files`);
-```
-
----
-
-## 🧩 4️⃣ Build and Run the React Frontend in Docker
-
-Go to the frontend folder:
-```bash
-cd ../frontend
-```
-
-Build and run the frontend container:
+#### Example: Mount `Downloads` folder
 
 ```bash
-docker build -t aifilemanager-frontend .
-docker run -d --name aifilemanager-ui --network aifilemanager_net -p 5173:5173 aifilemanager-frontend
+docker run -d --name aifilemanager-api \
+  --network aifilemanager_net \
+  -p 5000:5000 \
+  -v "C:\\Users\\User\\Downloads:/app/files" \
+  aifilemanager-backend
 ```
 
-✅ The React app will be available at:  
-👉 [http://localhost:5173](http://localhost:5173)
-
-It will automatically connect to the backend via the shared network.
-
----
-
-## 🐋 5️⃣ Run Both via Docker Compose (Optional)
-
-If you want a one-command setup, create a `docker-compose.yml` in your root folder:
-
-```yaml
-version: '3.9'
-
-services:
-  backend:
-    build: ./backend
-    container_name: aifilemanager-api
-    ports:
-      - "5000:5000"
-    networks:
-      - aifilemanager_net
-
-  frontend:
-    build: ./frontend
-    container_name: aifilemanager-ui
-    ports:
-      - "5173:5173"
-    environment:
-      - VITE_API_BASE_URL=http://backend:5000
-    depends_on:
-      - backend
-    networks:
-      - aifilemanager_net
-
-networks:
-  aifilemanager_net:
-    external: true
-```
-
-Then run:
-```bash
-docker compose up --build
-```
-
-✅ This builds and runs both backend and frontend automatically.
-
----
-
-## 🧪 Testing Connection
-
-1. Open [http://localhost:5173](http://localhost:5173)  
-2. The frontend should call `http://backend:5000` inside Docker.  
-3. If your drive list or test data loads — ✅ everything is working!
-
----
-
-## 🧱 Full Command Summary
+#### Example: Mount `Documents` folder
 
 ```bash
-# Create shared network
-docker network create aifilemanager_net
-
-# Build and run backend
-cd backend
-docker build -t aifilemanager-backend .
-docker run -d --name aifilemanager-api --network aifilemanager_net -p 5000:5000 aifilemanager-backend
-
-# Build and run frontend
-cd ../frontend
-docker build -t aifilemanager-frontend .
-docker run -d --name aifilemanager-ui --network aifilemanager_net -p 5173:5173 aifilemanager-frontend
-
-# OR (easier) run both together
-cd ..
-docker compose up --build
+docker run -d --name aifilemanager-api \
+  --network aifilemanager_net \
+  -p 5000:5000 \
+  -v "C:\\Users\\User\\Documents:/app/files" \
+  aifilemanager-backend
 ```
+
+🧠 **Explanation:**
+
+| Flag                                         | Description                                 |
+| -------------------------------------------- | ------------------------------------------- |
+| `--network aifilemanager_net`                | Connects container to shared Docker network |
+| `-p 5000:5000`                               | Maps host port 5000 → container port 5000   |
+| `-v "C:\\Users\\User\\Downloads:/app/files"` | Mounts local folder into the container      |
+| `aifilemanager-backend`                      | The Docker image name you built earlier     |
 
 ---
 
-## 🧰 Troubleshooting
+### 🌐 4️⃣ Open and Use the API
 
-| Issue | Cause | Fix |
-|-------|--------|-----|
-| 🚫 `localhost refused to connect` | API not listening on 0.0.0.0 | Add `builder.WebHost.UseUrls("http://0.0.0.0:5000");` in `Program.cs` |
-| 🚫 Network not found | You forgot to create it | `docker network create aifilemanager_net` |
-| 🚫 Port in use | Another process is using 5000 or 5173 | Change mapping, e.g. `-p 5001:5000` |
-| 🚫 `Project file does not exist` | Wrong folder or case mismatch | Ensure folder names match exactly (`AIFileManager.API`) |
-| 🚫 No response | App crashed | Check logs with `docker logs aifilemanager-api` |
+Once the container is running, open:
+👉 [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html)
+
+Then try this:
+
+```
+GET /api/Storage/getFileList?path=/app/files
+```
+
+✅ It will show the list of files from the folder you mounted (e.g., your Downloads or Documents).
 
 ---
 
-## ✅ Final Notes
+### 🧹 5️⃣ Stop and Remove Containers (Optional)
 
-- Backend API (outside Docker): `http://localhost:5000`  
-- Backend API (inside Docker): `http://aifilemanager-api:5000`  
-- Frontend (React): `http://localhost:5173`  
-- API Swagger UI: [http://localhost:5000/swagger](http://localhost:5000/swagger)
+When you’re done testing:
+
+```bash
+docker stop aifilemanager-api
+docker rm aifilemanager-api
+```
+
+If you want to start again, just re-run the `docker run ...` command.
 
 ---
 
-💡 **Tip:**  
-When cloning, place this repo inside your `backend/` folder so it looks like:
-```
-project-root/
-├── backend/
-│   └── AIFileManager.API/
-└── frontend/
-```
-Then all Docker commands will work exactly as written above.
+### 🧠 Notes
+
+* The folder you mount **can be changed anytime** by editing the path in the `-v` option.
+* You can mount **multiple drives** if needed by extending the volume list in `docker-compose.yml`.
+* Inside Docker, your mounted folder is always located at:
+
+  ```
+  /app/files
+  ```
+* Swagger calls should use:
+
+  ```
+  path=/app/files
+  ```
+
+---
+
+✅ **Now your AIFileManager API can run anywhere, list any folder you mount, and be managed entirely from Docker.**
