@@ -1,0 +1,40 @@
+# Build folders
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Cache files
+*.cache
+*.db
+*.db-wal
+*.db-shm
+
+# Logs
+*.log
+
+# Backup
+*_backup.json
+
+# Publish output
+appsettings.Development.json
+
+# FileContentIndex
+**/FileContentIndex/
+
+# Debug
+**/Debug/
+**/Debug/**
+
+# Docker
+docker-compose.override.yml
+
+# Do NOT commit local docker-compose inside API folder
+AIFileManager.API/docker-compose.yml

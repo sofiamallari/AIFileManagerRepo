@@ -1,4 +1,5 @@
-﻿using AIFileManager.Interfaces;
+﻿using AIFileManager.DTO;
+using AIFileManager.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AIFileManager.Controllers
@@ -145,6 +146,38 @@ namespace AIFileManager.Controllers
                 return StatusCode(500, new { message = $"Unexpected error: {ex.Message}" });
             }
         }
+        [HttpGet("getFolderFileMetadata")]
+        public async Task<IActionResult> GetFolderFileMetadata(
+            [FromQuery] string path,
+            [FromQuery] bool deepScan = false)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+                return BadRequest(new { message = "Path is required." });
+
+            path = path.Trim();
+
+            if (!Path.IsPathRooted(path))
+                return BadRequest(new { message = "Please provide an absolute path." });
+
+            try
+            {
+                var files = await _service.GetFolderFileMetadataAsync(path, deepScan);
+                return Ok(files);
+            }
+            catch (DirectoryNotFoundException)
+            {
+                return NotFound(new { message = $"Directory not found: {path}" });
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return StatusCode(403, new { message = "Access denied." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = $"Unexpected error: {ex.Message}" });
+            }
+        }
+
 
         /// <summary>
         /// Deletes File
@@ -234,6 +267,24 @@ namespace AIFileManager.Controllers
                 return BadRequest(new { message = $"Error moving folder: {ex.Message}" });
             }
         }
+
+        [HttpPost("analyzeFiles")]
+        public async Task<IActionResult> AnalyzeFiles([FromBody] List<FileInfoDto> files)
+        {
+            if (files == null || !files.Any())
+                return BadRequest(new { message = "File list is empty." });
+
+            try
+            {
+                var result = await _service.AnalyzeFilesInBatchesAsync(files);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = $"Error during analysis: {ex.Message}" });
+            }
+        }
+
 
     }
 }

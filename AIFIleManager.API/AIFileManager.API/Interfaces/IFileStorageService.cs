@@ -12,5 +12,9 @@ namespace AIFileManager.Interfaces
         Task<OperationResultDto> MoveFileAsync(string source, string destination);
         Task<OperationResultDto> MoveFolderAsync(string source, string destination);
         Task<IEnumerable<FileInfoDto>> GetFileMetadataAsync(string path, bool deepScan = false);
+        Task<IEnumerable<FileInfoDto>> GetFolderFileMetadataAsync(string folderPath, bool deepScan = false);
+        Task<AIAnalysisResultDto> AnalyzeFilesInBatchesAsync(IEnumerable<FileInfoDto> files, int batchSize = 100);
+
+
     }
 }

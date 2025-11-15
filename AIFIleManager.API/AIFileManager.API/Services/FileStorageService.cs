@@ -7,6 +7,11 @@ namespace AIFileManager.Services
 {
     public class FileStorageService : IFileStorageService
     {
+        private readonly IAIService _aiService;
+        public FileStorageService(IAIService aiService)
+        {
+            _aiService = aiService;
+        }
         #region private
         public async Task<IEnumerable<DriveInfoDto>> GetDrivesAsync()
         {
@@ -86,6 +91,11 @@ namespace AIFileManager.Services
                 throw new IOException($"Error listing metadata for path {path}: {ex.Message}", ex);
             }
         }
+        public async Task<IEnumerable<FileInfoDto>> GetFolderFileMetadataAsync(string folderPath, bool deepScan = false)
+        {
+            return await EnumerateFilesAsync(folderPath, includeHash: true, deepScan);
+        }
+
         public async Task<OperationResultDto> DeleteFileAsync(string path, bool permanent = false)
         {
             return await TryExecuteIOAsync(async () =>
@@ -225,7 +235,60 @@ namespace AIFileManager.Services
                 }
             });
         }
+        //private async Task<List<FileInfoDto>> EnumerateFilesAsync(string path, bool includeHash = false, bool deepScan = false)
+        //{
+        //    var result = new List<FileInfoDto>();
 
+        //    if (string.IsNullOrWhiteSpace(path))
+        //        throw new ArgumentException("Path cannot be null or empty.");
+
+        //    if (!Directory.Exists(path))
+        //        throw new DirectoryNotFoundException($"Directory not found: {path}");
+
+        //    var option = deepScan ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+        //    var files = Directory.EnumerateFiles(path, "*", option);
+
+        //    foreach (var file in files)
+        //    {
+        //        try
+        //        {
+        //            var info = new FileInfo(file);
+        //            var dto = new FileInfoDto
+        //            {
+        //                Name = info.Name,
+        //                SizeMB = Math.Round(info.Length / (1024.0 * 1024), 2),
+        //                ModifiedDate = info.LastWriteTime
+        //            };
+
+        //            if (includeHash)
+        //                dto.Hash = await ComputePartialHashAsync(file);
+
+        //            result.Add(dto);
+        //        }
+        //        catch (UnauthorizedAccessException)
+        //        {
+        //            result.Add(new FileInfoDto
+        //            {
+        //                Name = Path.GetFileName(file),
+        //                SizeMB = 0,
+        //                ModifiedDate = DateTime.MinValue,
+        //                Hash = "AccessDenied"
+        //            });
+        //        }
+        //        catch (IOException ex)
+        //        {
+        //            result.Add(new FileInfoDto
+        //            {
+        //                Name = Path.GetFileName(file),
+        //                SizeMB = 0,
+        //                ModifiedDate = DateTime.MinValue,
+        //                Hash = $"Error: {ex.Message}"
+        //            });
+        //        }
+        //    }
+
+        //    return result;
+        //}
         private async Task<List<FileInfoDto>> EnumerateFilesAsync(string path, bool includeHash = false, bool deepScan = false)
         {
             var result = new List<FileInfoDto>();
@@ -236,49 +299,124 @@ namespace AIFileManager.Services
             if (!Directory.Exists(path))
                 throw new DirectoryNotFoundException($"Directory not found: {path}");
 
-            var option = deepScan ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
-            var files = Directory.EnumerateFiles(path, "*", option);
+            // Include this folder and all subfolders if deepScan = true
+            var folderQueue = new Queue<string>();
+            folderQueue.Enqueue(path);
 
-            foreach (var file in files)
+            while (folderQueue.Count > 0)
             {
+                string currentFolder = folderQueue.Dequeue();
+
+                // Add subfolders to queue
                 try
                 {
-                    var info = new FileInfo(file);
-                    var dto = new FileInfoDto
+                    if (deepScan)
                     {
-                        Name = info.Name,
-                        SizeMB = Math.Round(info.Length / (1024.0 * 1024), 2),
-                        ModifiedDate = info.LastWriteTime
-                    };
-
-                    if (includeHash)
-                        dto.Hash = await ComputePartialHashAsync(file);
-
-                    result.Add(dto);
+                        foreach (var subfolder in Directory.GetDirectories(currentFolder))
+                            folderQueue.Enqueue(subfolder);
+                    }
                 }
-                catch (UnauthorizedAccessException)
+                catch
                 {
-                    result.Add(new FileInfoDto
-                    {
-                        Name = Path.GetFileName(file),
-                        SizeMB = 0,
-                        ModifiedDate = DateTime.MinValue,
-                        Hash = "AccessDenied"
-                    });
+                    // skip inaccessible subfolder
                 }
-                catch (IOException ex)
+
+                // Process all files in the current folder
+                string[] filesInFolder;
+                try
                 {
-                    result.Add(new FileInfoDto
+                    filesInFolder = Directory.GetFiles(currentFolder);
+                }
+                catch
+                {
+                    continue; // skip folder if inaccessible
+                }
+
+                foreach (var file in filesInFolder)
+                {
+                    try
                     {
-                        Name = Path.GetFileName(file),
-                        SizeMB = 0,
-                        ModifiedDate = DateTime.MinValue,
-                        Hash = $"Error: {ex.Message}"
-                    });
+                        var info = new FileInfo(file);
+                        var dto = new FileInfoDto
+                        {
+                            Name = info.Name,
+                            SizeMB = Math.Round(info.Length / (1024.0 * 1024), 2),
+                            ModifiedDate = info.LastWriteTime
+                        };
+
+                        if (includeHash)
+                            dto.Hash = await ComputePartialHashAsync(file);
+
+                        result.Add(dto);
+                    }
+                    catch
+                    {
+                        result.Add(new FileInfoDto
+                        {
+                            Name = Path.GetFileName(file),
+                            SizeMB = 0,
+                            ModifiedDate = DateTime.MinValue,
+                            Hash = "AccessDenied"
+                        });
+                    }
                 }
             }
 
             return result;
+        }
+        public async Task<AIAnalysisResultDto> AnalyzeFilesInBatchesAsync(IEnumerable<FileInfoDto> files, int batchSize = 100)
+        {
+            var fileList = files.ToList();
+
+            if (!fileList.Any())
+                return new AIAnalysisResultDto
+                {
+                    Suggestions = new List<string> { "No files to analyze." }
+                };
+
+            var finalResult = new AIAnalysisResultDto
+            {
+                LargeFiles = new List<string>(),
+                DuplicateFiles = new List<string>(),
+                OldFiles = new List<string>(),
+                Suggestions = new List<string>()
+            };
+
+            // Split files into batches
+            var batches = fileList
+                .Select((file, index) => new { file, index })
+                .GroupBy(x => x.index / batchSize)
+                .Select(g => g.Select(x => x.file).ToList())
+                .ToList();
+
+            foreach (var batch in batches)
+            {
+                try
+                {
+                    // Call AI service for this batch
+                    var batchResult = await _aiService.AnalyzeFilesAsync(batch);
+
+                    if (batchResult != null)
+                    {
+                        finalResult.LargeFiles?.AddRange(batchResult.LargeFiles ?? []);
+                        finalResult.DuplicateFiles?.AddRange(batchResult.DuplicateFiles ?? []);
+                        finalResult.OldFiles?.AddRange(batchResult.OldFiles ?? []);
+                        finalResult.Suggestions?.AddRange(batchResult.Suggestions ?? []);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    finalResult.Suggestions?.Add($"Batch error: {ex.Message}");
+                }
+            }
+
+            // Deduplicate results
+            finalResult.LargeFiles = finalResult.LargeFiles?.Distinct().ToList();
+            finalResult.DuplicateFiles = finalResult.DuplicateFiles?.Distinct().ToList();
+            finalResult.OldFiles = finalResult.OldFiles?.Distinct().ToList();
+            finalResult.Suggestions = finalResult.Suggestions?.Distinct().ToList();
+
+            return finalResult;
         }
         private static async Task<string> ComputePartialHashAsync(string filePath)
         {
