@@ -1,5 +1,7 @@
-﻿using AIFileManager.DTO;
+﻿using AIFileManager.API.DTO;
+using AIFileManager.DTO;
 using AIFileManager.Interfaces;
+using AIFileManager.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AIFileManager.Controllers
@@ -9,7 +11,6 @@ namespace AIFileManager.Controllers
     public class StorageController : ControllerBase
     {
         private readonly IFileStorageService _service;
-
         public StorageController(IFileStorageService service)
         {
             _service = service;
@@ -284,7 +285,31 @@ namespace AIFileManager.Controllers
                 return StatusCode(500, new { message = $"Error during analysis: {ex.Message}" });
             }
         }
+        [HttpPost("analyzeFilesParallel")]
+        public async Task<IActionResult> AnalyzeFilesParallel(
+        [FromBody] List<FileInfoDto> files,
+        [FromQuery] int batchSize = 10)
+        {
+            if (files == null || !files.Any())
+                return BadRequest(new { message = "File list is empty." });
 
+            try
+            {
+                var result = await _service.AnalyzeFilesParallelBatchesAsync(
+                    files,
+                    batchSize,
+                    onBatchCompleted: async (batchNum) =>
+                    {
+                        Console.WriteLine($"Batch {batchNum} completed.");
+                    });
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = $"Error during parallel analysis: {ex.Message}" });
+            }
+        }
 
     }
 }

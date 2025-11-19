@@ -1,11 +1,18 @@
-﻿using AIFileManager.DTO;
+﻿using AIFileManager.API.DTO;
+using AIFileManager.DTO;
 
 namespace AIFileManager.Interfaces
 {
     public interface IAIService
     {
-        Task<AIAnalysisResultDto?> AnalyzeFilesAsync(List<FileInfoDto> files);
+        // BATCH → 1 decision
+        Task<DecisionDto> AnalyzeFileAsync(FileInfoDto file);           // single file fallback
         Task<AIAnalysisResultDto?> AnalyzeFolderAsync(List<FolderInfoDto> folders);
-        Task<AIAnalysisResultDto?> OptimizeAsync(object metadata);
+        Task<List<DecisionDto>?> AnalyzeBatchAsync(List<FileInfoDto> files);
+        Task<DecisionDto?> CheckLargeFileAsync(List<FileInfoDto> files);
+        Task<ThresholdRespDto?> ThresholdLimitAsync(ThresholdReqDto req);
+        Task<DecisionDto?> AnalyzeSingleFileAsync(FileInfoDto file);
+        Task<DecisionDto?> AnalyzeFolderAsync(FolderAnalysisReqDto req);
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using AIFileManager.DTO;
+﻿using AIFileManager.API.DTO;
+using AIFileManager.DTO;
 
 namespace AIFileManager.Interfaces
 {
@@ -13,8 +14,7 @@ namespace AIFileManager.Interfaces
         Task<OperationResultDto> MoveFolderAsync(string source, string destination);
         Task<IEnumerable<FileInfoDto>> GetFileMetadataAsync(string path, bool deepScan = false);
         Task<IEnumerable<FileInfoDto>> GetFolderFileMetadataAsync(string folderPath, bool deepScan = false);
-        Task<AIAnalysisResultDto> AnalyzeFilesInBatchesAsync(IEnumerable<FileInfoDto> files, int batchSize = 100);
-
-
+        Task<AIAnalysisResultDto> AnalyzeFilesInBatchesAsync(IEnumerable<FileInfoDto> files, int batchSize = 10);
+        Task<List<DecisionDto>> AnalyzeFilesParallelBatchesAsync(IEnumerable<FileInfoDto> files, int batchSize, Func<int, Task>? onBatchCompleted = null);
     }
 }
